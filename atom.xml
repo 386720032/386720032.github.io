@@ -6,7 +6,7 @@
   <link href="http://386720032.github.io/atom.xml" rel="self"/>
   
   <link href="http://386720032.github.io/"/>
-  <updated>2020-10-20T05:48:14.038Z</updated>
+  <updated>2020-10-20T07:29:35.785Z</updated>
   <id>http://386720032.github.io/</id>
   
   <author>
@@ -21,16 +21,14 @@
     <link href="http://386720032.github.io/2020/092257779.html"/>
     <id>http://386720032.github.io/2020/092257779.html</id>
     <published>2020-09-22T06:42:45.000Z</published>
-    <updated>2020-10-20T05:48:14.038Z</updated>
+    <updated>2020-10-20T07:29:35.785Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;#前言&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在刚开始学习Linux系统的时候，安装配置环境遇到了很多让人心态爆炸的问题，各种bug不断其中一个主要问题就是在装了Ubuntn 12.04.2 -desktop</summary>
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -68,6 +66,31 @@
     <category term="https" scheme="http://386720032.github.io/tags/https/"/>
     
     <category term="小知识" scheme="http://386720032.github.io/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>排序算法之快速排序</title>
+    <link href="http://386720032.github.io/2020/081157779.html"/>
+    <id>http://386720032.github.io/2020/081157779.html</id>
+    <published>2020-08-11T03:22:15.000Z</published>
+    <updated>2020-10-20T07:21:34.407Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基本思想&quot;&gt;&lt;a href=&quot;#基本思想&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="排序" scheme="http://386720032.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+    <category term="数据结构" scheme="http://386720032.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   

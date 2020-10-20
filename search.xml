@@ -8,7 +8,7 @@
       <link href="2020/092257779.html"/>
       <url>2020/092257779.html</url>
       
-        <content type="html"><![CDATA[<p>#前言</p><ul><li>在刚开始学习Linux系统的时候，安装配置环境遇到了很多让人心态爆炸的问题，各种bug不断其中一个主要问题就是在装了Ubuntn 12.04.2 -desktop 系统之后，刚安装完第一次开机的时候还好好的，后面关机了再次打开的时候就出现Ubuntn黑屏无法正常启动的问题,等了很久Ubuntn也没有启动，想关掉它却一直会显示虚拟机繁忙根本关不掉，除了重启电脑或者用任务管理器强行虚拟机结束进程一点办法没有，最烦人的是就算你重启或者用任务管理器关掉它之后照样开机还是黑屏，Ubuntn还是依然的打不开  </li><li>在经历了很长一段时间的折磨和煎熬之后，包括重装了几次虚拟机和Ubuntn,重装虚拟机和Ubuntn的话第一次开机是没问题的，但是关机后再开机还是会出现黑屏，后面还是通过万能的度娘把问题解决了<br>#解决方法</li><li>首先，在windows搜索框搜cmd<br><img src="https://img-blog.csdnimg.cn/20200401141039811.png" alt="1"><br>然后以管理员身份进行<br><img src="https://img-blog.csdnimg.cn/20200401141422551.png" alt="2"><br>输入 net winsock reset<br><img src="https://img-blog.csdnimg.cn/20200401141600238.png" alt="3"><br>然后重启电脑<br>win+R然后输入msconfig<br>在服务里先把隐藏所有Microsoft 服务打勾，之后<br>再在里面找到所有带VMware 的把勾取消,就是把所有跟vmware相关的服务取消<br><img src="https://img-blog.csdnimg.cn/20200401141654876.png"><br>点击应用（一定要点），确定，然后重启电脑<br>重启后打开任务管理器发现所有vmware相关进程都没有启动<br>再次win+R打开msconfig,选中所有vmware相关服务,点击应用,启用vmware的服务,再次重启电脑<br>然后打开Ubuntn不会发生黑屏问题了，问题得以解决，通过这个方法过了一周到现在Ubuntn也没有再也发生过黑屏</li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>-在刚开始学习Linux系统的时候，安装配置环境遇到了很多让人心态爆炸的问题，各种bug不断其中一个主要问题就是在装了Ubuntn 12.04.2 -desktop 系统之后，刚安装完第一次开机的时候还好好的，后面关机了再次打开的时候就出现Ubuntn黑屏无法正常启动的问题,等了很久Ubuntn也没有启动，想关掉它却一直会显示虚拟机繁忙根本关不掉，除了重启电脑或者用任务管理器强行虚拟机结束进程一点办法没有，最烦人的是就算你重启或者用任务管理器关掉它之后照样开机还是黑屏，Ubuntn还是依然的打不开</strong><br><strong>-在经历了很长一段时间的折磨和煎熬之后，包括重装了几次虚拟机和Ubuntn,重装虚拟机和Ubuntn的话第一次开机是没问题的，但是关机后再开机还是会出现黑屏，后面还是通过万能的度娘把问题解决了</strong></p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p><strong>- 首先，在windows搜索框搜cmd</strong><br> <img src="https://img-blog.csdnimg.cn/20200401141039811.png" alt="1"><br><strong>然后以管理员身份进行</strong><br><img src="https://img-blog.csdnimg.cn/20200401141422551.png" alt="2"><br><strong>输入 net winsock reset</strong><br><img src="https://img-blog.csdnimg.cn/20200401141600238.png" alt="3"><br><strong>然后重启电脑<br>win+R然后输入msconfig<br>在服务里先把隐藏所有Microsoft 服务打勾，之后<br>再在里面找到所有带VMware 的把勾取消,就是把所有跟vmware相关的服务取消</strong><br><img src="https://img-blog.csdnimg.cn/20200401141654876.png"><br><strong>点击应用（一定要点），确定，然后重启电脑<br>重启后打开任务管理器发现所有vmware相关进程都没有启动<br>再次win+R打开msconfig,选中所有vmware相关服务,点击应用,启用vmware的服务,再次重启电脑<br>然后打开Ubuntn不会发生黑屏问题了，问题得以解决，通过这个方法过了一周到现在Ubuntn也没有再也发生过黑屏</strong></p>]]></content>
       
       
       
@@ -40,6 +40,27 @@
             <tag> https </tag>
             
             <tag> 小知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>排序算法之快速排序</title>
+      <link href="2020/081157779.html"/>
+      <url>2020/081157779.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h1><p>通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序<br>1.任取一个元素 (如第一个) 为中心  </p><p>2.所有比它小的元素一律前放，比它大的元素一律后放，形成左右两个子表</p><p>3.对各子表重新选择中心元素并依此规则调整，直到每个子表的元素只剩一个</p><h1 id="划分过程中的实例："><a href="#划分过程中的实例：" class="headerlink" title="划分过程中的实例："></a>划分过程中的实例：</h1><p><img src="https://img-blog.csdnimg.cn/20200501001301270.png"><br><strong>算法分析</strong>：</p><p><strong>平均计算时间是O(nlog2n),就平均计算时间而言，快速排序是我们所讨论的所有内排序方法中最好的一个</strong></p><p><strong>时间效率</strong>: O(nlog2n) ,每趟确定的元素呈指数增加</p><p><strong>空间效率</strong>: O(log2n),递归要用到栈空间</p><p><strong>稳 定 性</strong>: 不稳定 ,可选任一元素为支点</p><p><strong>代码实现</strong>：  </p><pre><code>import java.util.Random;public class Quicksort {    public static void main(String[] args) {    int a[]=new int[10];     //声明创建长度为10的一维数组    Random ran=new Random();    int i;    //生成随机数组并输出    for(i=0;i&lt;a.length;i++)    {        a[i]=ran.nextInt(1000)+1;       // 把范围为1-1000的随机整数复制给a[i]        System.out.print(a[i]+" ");     // 输出a[i]    }     System.out.println();    quickSort(a,0,a.length-1);    System.out.println("快速排序后：");    for(int j:a)   //遍历排序后的数组                {        System.out.print(j+" ");    }  }    public static void quickSort(int a[],int l,int r)    {        int i,j,temp;        if(l&gt;=r) return ;  //只有一个记录或者无记录，则无需排序        i=l;        j=r;        temp=a[i];   //取a[i]为基准数             while(i!=j)        {            while(i&lt;j&amp;&amp;a[j]&gt;=temp) //找比基准数temp小的数            {                j--;            }            if(i&lt;j)                     a[i++]=a[j];                    while(i&lt;j&amp;&amp;a[i]&lt;=temp)  //找比基准数temp大的数            {                 i++;            }            if(i&lt;j)            a[j--]=a[i];        }        a[i]=temp;              //i为基准数temp放入的位置    quickSort(a,l,i-1);       //递归调用    quickSort(a,i+1,r);    }}</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 排序 </tag>
+            
+            <tag> 数据结构 </tag>
             
         </tags>
       

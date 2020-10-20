@@ -4,13 +4,44 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="2020/101616107.html"/>
-      <url>2020/101616107.html</url>
+      <title>基于虚拟机 VMware 下的Ubuntn开机黑屏问题</title>
+      <link href="2020/092257779.html"/>
+      <url>2020/092257779.html</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<p>#前言</p><ul><li>在刚开始学习Linux系统的时候，安装配置环境遇到了很多让人心态爆炸的问题，各种bug不断其中一个主要问题就是在装了Ubuntn 12.04.2 -desktop 系统之后，刚安装完第一次开机的时候还好好的，后面关机了再次打开的时候就出现Ubuntn黑屏无法正常启动的问题,等了很久Ubuntn也没有启动，想关掉它却一直会显示虚拟机繁忙根本关不掉，除了重启电脑或者用任务管理器强行虚拟机结束进程一点办法没有，最烦人的是就算你重启或者用任务管理器关掉它之后照样开机还是黑屏，Ubuntn还是依然的打不开  </li><li>在经历了很长一段时间的折磨和煎熬之后，包括重装了几次虚拟机和Ubuntn,重装虚拟机和Ubuntn的话第一次开机是没问题的，但是关机后再开机还是会出现黑屏，后面还是通过万能的度娘把问题解决了<br>#解决方法</li><li>首先，在windows搜索框搜cmd<br><img src="https://img-blog.csdnimg.cn/20200401141039811.png" alt="1"><br>然后以管理员身份进行<br><img src="https://img-blog.csdnimg.cn/20200401141422551.png" alt="2"><br>输入 net winsock reset<br><img src="https://img-blog.csdnimg.cn/20200401141600238.png" alt="3"><br>然后重启电脑<br>win+R然后输入msconfig<br>在服务里先把隐藏所有Microsoft 服务打勾，之后<br>再在里面找到所有带VMware 的把勾取消,就是把所有跟vmware相关的服务取消<br><img src="https://img-blog.csdnimg.cn/20200401141654876.png"><br>点击应用（一定要点），确定，然后重启电脑<br>重启后打开任务管理器发现所有vmware相关进程都没有启动<br>再次win+R打开msconfig,选中所有vmware相关服务,点击应用,启用vmware的服务,再次重启电脑<br>然后打开Ubuntn不会发生黑屏问题了，问题得以解决，通过这个方法过了一周到现在Ubuntn也没有再也发生过黑屏</li></ul>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>http知识</title>
+      <link href="2020/092110111.html"/>
+      <url>2020/092110111.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="应用程序分类："><a href="#应用程序分类：" class="headerlink" title="应用程序分类："></a>应用程序分类：</h1><ul><li>B/S：Browser（浏览器）/ Server（服务器）  </li><li>C/S：Client（客户端）/ Server（服务器）</li></ul><h1 id="http协议：基于TCP-IP的’无状态’通信协议"><a href="#http协议：基于TCP-IP的’无状态’通信协议" class="headerlink" title="http协议：基于TCP/IP的’无状态’通信协议"></a>http协议：基于TCP/IP的’无状态’通信协议</h1><p>前端（浏览器客户端）向后台（web服务器端）发送http请求获取数据</p><h1 id="http请求报文："><a href="#http请求报文：" class="headerlink" title="http请求报文："></a>http请求报文：</h1><ul><li><p>一个HTTP请求报文由4个部分组成：</p></li><li><p>请求行（request line）、</p></li><li><p>请求头部（header）</p></li><li><p>空行</p></li><li><p>请求数据  </p></li><li><p>1.form的enctype属性为编码方式，常用有两种：</p><ul><li>application/x-www-form-urlencoded</li><li>multipart/form-data</li></ul></li><li><p>2.默认为application/x-www-form-urlencoded。</p></li><li><p>3.当action为get时候，浏览器用x-www-form-urlencoded的编码方式把form数据转换成一个字串（name1=value1&amp;name2=value2…），然后把这个字串追加到url后面，用?分割，加载这个新的url。</p></li><li><p>4.当action为post时候，浏览器把form数据封装到http body中，然后发送到server。 如果没有type=file的控件，用默认的application/x-www-form-urlencoded就可以了。 但是如果有type=file的话，就要用到multipart/form-data了。</p></li><li><p>5.当action为post且Content-Type类型是multipart/form-data，浏览器会把整个表单以控件为单位分割，并为每个部分加上Content-Disposition(form-data或者file),Content-Type(默认为text/plain),name(控件name)等信息，并加上分割符(boundary)。</p><h1 id="http响应报文："><a href="#http响应报文：" class="headerlink" title="http响应报文："></a>http响应报文：</h1><p>Response Headers里的Content-Type指服务器告诉浏览器相应的数据，类型一般有这三种：</p></li><li><p>application/x-www-form-urlencoded：数据被编码为名称/值对。这是标准的编码格式</p></li><li><p>multipart/form-data： 数据被编码为一条消息，页上的每个控件对应消息中的一个部分</p></li><li><p>text/plain： 数据以纯文本形式(text/json/xml/html)进行编码，其中不含任何控件或格式字符</p><h1 id="Status-Code表示服务器发回的响应状态代码；"><a href="#Status-Code表示服务器发回的响应状态代码；" class="headerlink" title="Status-Code表示服务器发回的响应状态代码；"></a>Status-Code表示服务器发回的响应状态代码；</h1><h1 id="Reason-Phrase表示状态代码的文本描述。"><a href="#Reason-Phrase表示状态代码的文本描述。" class="headerlink" title="Reason-Phrase表示状态代码的文本描述。"></a>Reason-Phrase表示状态代码的文本描述。</h1><p>状态代码由三位数字组成，第一个数字定义了响应的类别，且有五种可能取值。<br>1xx：指示信息—表示请求已接收，继续处理。<br>2xx：成功—表示请求已被成功接收、理解、接受。<br>3xx：重定向—要完成请求必须进行更进一步的操作。<br>4xx：客户端错误—请求有语法错误或请求无法实现。<br>5xx：服务器端错误—服务器未能实现合法的请求。</p></li><li><p>常见状态代码、状态描述的说明如下。<br>200 OK：客户端请求成功。<br>400 Bad Request：客户端请求有语法错误，不能被服务器所理解。<br>401 Unauthorized：请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用。<br>403 Forbidden：服务器收到请求，但是拒绝提供服务。<br>404 Not Found：请求资源不存在，举个例子：输入了错误的URL。<br>500 Internal Server Error：服务器发生不可预期的错误。<br>503 Server Unavailable：服务器当前不能处理客户端的请求，一段时间后可能恢复正常。</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+            <tag> https </tag>
+            
+            <tag> 小知识 </tag>
+            
+        </tags>
       
     </entry>
     

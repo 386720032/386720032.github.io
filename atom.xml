@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Jason&#39;blog</title>
+  <title>欢迎来到钟健桦的个人博客</title>
   
-  <subtitle>长路漫漫</subtitle>
+  <subtitle>Just do it!</subtitle>
   <link href="http://386720032.github.io/atom.xml" rel="self"/>
   
   <link href="http://386720032.github.io/"/>
-  <updated>2020-10-16T13:31:41.654Z</updated>
+  <updated>2020-10-20T05:48:14.038Z</updated>
   <id>http://386720032.github.io/</id>
   
   <author>
@@ -17,23 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://386720032.github.io/2020/101616107.html"/>
-    <id>http://386720032.github.io/2020/101616107.html</id>
-    <published>2020-10-16T11:46:30.179Z</published>
-    <updated>2020-10-16T13:31:41.654Z</updated>
+    <title>基于虚拟机 VMware 下的Ubuntn开机黑屏问题</title>
+    <link href="http://386720032.github.io/2020/092257779.html"/>
+    <id>http://386720032.github.io/2020/092257779.html</id>
+    <published>2020-09-22T06:42:45.000Z</published>
+    <updated>2020-10-20T05:48:14.038Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;p&gt;#前言&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在刚开始学习Linux系统的时候，安装配置环境遇到了很多让人心态爆炸的问题，各种bug不断其中一个主要问题就是在装了Ubuntn 12.04.2 -desktop</summary>
         
       
     
     
     
+    
+    <category term="Linux" scheme="http://386720032.github.io/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="http://386720032.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>http知识</title>
+    <link href="http://386720032.github.io/2020/092110111.html"/>
+    <id>http://386720032.github.io/2020/092110111.html</id>
+    <published>2020-09-21T03:12:45.000Z</published>
+    <updated>2020-10-20T05:51:57.028Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;应用程序分类：&quot;&gt;&lt;a href=&quot;#应用程序分类：&quot; class=&quot;headerlink&quot; title=&quot;应用程序分类：&quot;&gt;&lt;/a&gt;应用程序分类：&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;B/S：Browser（浏览器）/ Server（服务器） </summary>
+        
+      
+    
+    
+    
+    
+    <category term="http" scheme="http://386720032.github.io/tags/http/"/>
+    
+    <category term="https" scheme="http://386720032.github.io/tags/https/"/>
+    
+    <category term="小知识" scheme="http://386720032.github.io/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   

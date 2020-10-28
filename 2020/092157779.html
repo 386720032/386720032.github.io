@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基于虚拟机 VMware 下的Ubuntn开机黑屏问题, 欢迎来到钟健桦的个人博客">
+    <meta name="keywords" content="Python基础知识(1), 欢迎来到钟健桦的个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基于虚拟机 VMware 下的Ubuntn开机黑屏问题 | 欢迎来到钟健桦的个人博客</title>
+    <title>Python基础知识(1) | 欢迎来到钟健桦的个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -328,12 +328,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://topking66.gitee.io/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://pic.netbian.com/uploads/allimg/201020/232434-160320747437b1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基于虚拟机 VMware 下的Ubuntn开机黑屏问题</h1>
+                    <h1 class="description center-align post-title">Python基础知识(1)</h1>
                 </div>
             </div>
         </div>
@@ -450,12 +450,28 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
-                            <a href="/tags/Ubuntu/">
-                                <span class="chip bg-color">Ubuntu</span>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">基础</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%88%97%E8%A1%A8/">
+                                <span class="chip bg-color">列表</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%85%83%E7%BB%84/">
+                                <span class="chip bg-color">元组</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AD%97%E5%85%B8/">
+                                <span class="chip bg-color">字典</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                                <span class="chip bg-color">字符串</span>
                             </a>
                         
                     </div>
@@ -479,7 +495,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-22
+                    2020-09-21
                 </div>
                 
 
@@ -495,8 +511,102 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>-在刚开始学习Linux系统的时候，安装配置环境遇到了很多让人心态爆炸的问题，各种bug不断其中一个主要问题就是在装了Ubuntn 12.04.2 -desktop 系统之后，刚安装完第一次开机的时候还好好的，后面关机了再次打开的时候就出现Ubuntn黑屏无法正常启动的问题,等了很久Ubuntn也没有启动，想关掉它却一直会显示虚拟机繁忙根本关不掉，除了重启电脑或者用任务管理器强行虚拟机结束进程一点办法没有，最烦人的是就算你重启或者用任务管理器关掉它之后照样开机还是黑屏，Ubuntn还是依然的打不开</strong><br><strong>-在经历了很长一段时间的折磨和煎熬之后，包括重装了几次虚拟机和Ubuntn,重装虚拟机和Ubuntn的话第一次开机是没问题的，但是关机后再开机还是会出现黑屏，后面还是通过万能的度娘把问题解决了</strong></p>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p><strong>- 首先，在windows搜索框搜cmd</strong><br> <img src="https://img-blog.csdnimg.cn/20200401141039811.png" alt="1"><br><strong>然后以管理员身份进行</strong><br><img src="https://img-blog.csdnimg.cn/20200401141422551.png" alt="2"><br><strong>输入 net winsock reset</strong><br><img src="https://img-blog.csdnimg.cn/20200401141600238.png" alt="3"><br><strong>然后重启电脑<br>win+R然后输入msconfig<br>在服务里先把隐藏所有Microsoft 服务打勾，之后<br>再在里面找到所有带VMware 的把勾取消,就是把所有跟vmware相关的服务取消</strong><br><img src="https://img-blog.csdnimg.cn/20200401141654876.png"><br><strong>点击应用（一定要点），确定，然后重启电脑<br>重启后打开任务管理器发现所有vmware相关进程都没有启动<br>再次win+R打开msconfig,选中所有vmware相关服务,点击应用,启用vmware的服务,再次重启电脑<br>然后打开Ubuntn不会发生黑屏问题了，问题得以解决，通过这个方法过了一周到现在Ubuntn也没有再也发生过黑屏</strong></p>
+                <h1 id="基础中的基础"><a href="#基础中的基础" class="headerlink" title="基础中的基础"></a>基础中的基础</h1><ul>
+<li>解释型语言和编译型语言差距；<br><img src="https://img-blog.csdnimg.cn/20181026205213120.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=,size_27,color_FFFFFF,t_70">  </li>
+<li>Python概述<br><img src="https://img-blog.csdnimg.cn/20181026205305245.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=,size_27,color_FFFFFF,t_70"></li>
+<li>解释器执行原理<br><img src="https://img-blog.csdnimg.cn/20181026205829737.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=,size_27,color_FFFFFF,t_70"></li>
+<li>which python3可以查看python3的位置(linux下)；  </li>
+<li>交互式环境中使用exit()或者ctrl+D退出；  </li>
+<li>9 // 2表示取结果的整数，乘方使用**；  </li>
+<li>乘法可以用在 字符串中 也就是说 “_ “ * 5 会输出5个 “_”；  </li>
+<li><strong>数据类型分为 数字型和非数字型: (1)数字型 : 整形、浮点型、布尔型、复数型。(2)非数字型: 字符串、列表、元组、字典。type(变量名)查看变量类型；</strong></li>
+<li>python3中没有long，只有int；</li>
+<li>变量的输入: input()函数。注意: input()函数输入的数据类型都是字符串类型；</li>
+<li>在python中，如果变量名需要两个或多个单词组成时，可以按照下面的方式: ①每个单词都是小写；②单词和单词之间使用_下划线连接；③使用驼峰规则；</li>
+<li>print函数如果不想输出换行，在后面加上一个end=””(例如print(“a”,end=””))；单纯的只想输出一个换行可以使用print()或者print(“”)；</li>
+<li>\t(制表符(对齐))和\n转义字符；<br>关于函数的注释，写在函数的下面，加上三个”””。以及文档注释，例如：<pre><code>def sum_2_sum(a, b):
+  """计算a和b的和
+  :param a:第一个参数
+  :param b:第二个参数
+  :return:
+  """
+  return a + b</code></pre>
+</li>
+<li>因为函数体相对比较独立，函数定义的上方，应该和其他代码(包括注释)保留两个空行；</li>
+<li>import导入的文件可以python解释器将模块解释成一个pyc二进制文件(类似Java的.class?)；</li>
+<li>python中关键字后面不需要加括号(如del 关键字)；</li>
+<li>方法和函数的异同: ①方法和函数类似，同样是封装了独立的功能；②方法需要通过对象来调用，表示针对这个对象要做的操作③函数需要记住，但是方法是对象的”函数”，方法不需要记住(IDE提示或者IPython中TAB补全)；</li>
+<li>变量赋值的几种特殊的方式:<pre><code>a = b = c = 1  # 三个都是1
+a, b, c = 1, 2, "hello"  # a = 1, b = 2, c = "hello"
+</code></pre>
+</li>
+</ul>
+<p>a, b = 0, 1<br>a, b = b, a+b  # 右边表达式的执行顺序是从左往右的。<br>“””<br>上面的代码类似:<br>n = b<br>m = a+b<br>a = n<br>b = m<br>“””<br>print(a)  # 1<br>print(b)  # 1</p>
+<pre><code>- 逻辑运算符:and、or、not，成员运算符in、not in，身份运算符is、is not；
+# 列表、元组(tuple)、字典、集合、字符串
+- 列表可以嵌套；
+- ```
+x = [['a', 'b', 'c'], [1, 2, 3]]
+print(x[0])  # ['a', 'b', 'c']
+print(x[0][1])  # 'b'</code></pre>
+<ul>
+<li>元组不同于列表的是: 元组不能修改，用()表示；(不能增删改)  </li>
+<li>元组一般保存不同类型的数据；  </li>
+<li><strong>注意: 只有一个元素的元组: single_tuple = (5,) ，也就是说元组中只包含一个元素时，需要在元素后面添加逗号；不能这样写   single_tuple = (5)，这样是一个整形的变量；另外，创建元组也可以不加上括号；</strong><pre><code>tup = "a", "b", "c", "d"
+print(tup)
+print(type(tup))
+</code></pre>
+</li>
+</ul>
+<p>tup2 = (“a”,)  # 一个元素的元组 (后面必须加上一个括号)<br>print(tup2)<br>print(type(tup2))</p>
+<pre><code>输出:  </code></pre>
+<p>(‘a’, ‘b’, ‘c’, ‘d’)<br>&lt;class ‘tuple’&gt;<br>(‘a’,)<br>&lt;class ‘tuple’&gt;</p>
+<pre><code>- 元组的用途: ① 作为函数的参数和返回值；②格式化字符串(格式字符串本身就是一个元组)；(3)让列表不可以被修改，保护数据安全；
+- 格式化字符串和元组的关系，看下面的三个print输出是一样的:  </code></pre>
+<h1 id="元组和格式化字符串的关系"><a href="#元组和格式化字符串的关系" class="headerlink" title="元组和格式化字符串的关系"></a>元组和格式化字符串的关系</h1><p>info_tuple = (“小明”, 21, 1.85)<br>print(“%s 年龄是 %d 身高是 %.2f” % (“小明”, 21, 1.85))<br>print(“%s 年龄是 %d 身高是 %.2f” % info_tuple)</p>
+<p>info_str = “%s 年龄是 %d 身高是 %.2f” % info_tuple<br>print(info_str)</p>
+<pre><code>- 元组和列表可以相互转换 : ①使用list(元组)将元组转换成列表；②使用tuple将列表转换成元组；  
+- 字典: ① 键必须是唯一的 ②值可以取任意类型，但是键只能使用字符串、数字或者元组(键只能是不可变类型)。  
+- **遍历字典的时候for k in dict 中的k是键，而不是值。（普通的for），不过也可以通过items()方法遍历键值对: **  </code></pre>
+<p>dict_student = {‘name’: ‘xiaoming’, ‘age’: ‘18’, ‘qq’: “1234”}</p>
+<h1 id="遍历方式一"><a href="#遍历方式一" class="headerlink" title="遍历方式一"></a>遍历方式一</h1><p>for k in dict_student:  # k 是key<br>    print(k, end=” “)<br>    print(dict_student[k])</p>
+<p>print(“*” * 20)</p>
+<h1 id="遍历方式二"><a href="#遍历方式二" class="headerlink" title="遍历方式二"></a>遍历方式二</h1><p>for k, v in dict_student.items():<br>    print(k, v)</p>
+<pre><code>- 字符串中的转义字符：\n表示换行，而\r表示回车，字符串中的函数- - isspace()判断的时候\t\n\r都是表示的空白字符；    
+isdecimla()、isdigit()、isnumeric()都不能判断字符串中的小数，(可以判断字符串中的整数)；  
+- 集合set的使用: 可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。 集合还有一些方法add()、update()、pop()等；</code></pre>
+<p>student = {‘Tom’, ‘Jim’, ‘Mary’, ‘Tom’, ‘Jack’, ‘Rose’}<br>print(student)  # 输出集合，重复的元素被自动去掉</p>
+<p>if ‘Rose’ in student:<br>    print(‘Rose 在集合中’)<br>else:<br>    print(‘Rose 不在集合中’)</p>
+<h1 id="set可以进行集合运算"><a href="#set可以进行集合运算" class="headerlink" title="set可以进行集合运算"></a>set可以进行集合运算</h1><p>a = set(‘abracadabra’)<br>b = set(‘alacazam’)</p>
+<p>print(a - b)  # a和b的差集<br>print(a | b)  # a和b的并集<br>print(a &amp; b)  # a和b的交集<br>print(a ^ b)  # a和b中不同时存在的元素</p>
+<pre><code>输出：  </code></pre>
+<p>{‘Jim’, ‘Mary’, ‘Jack’, ‘Rose’, ‘Tom’}<br>Rose 在集合中<br>{‘b’, ‘d’, ‘r’}<br>{‘b’, ‘l’, ‘c’, ‘d’, ‘z’, ‘m’, ‘a’, ‘r’}<br>{‘c’, ‘a’}<br>{‘b’, ‘m’, ‘l’, ‘r’, ‘d’, ‘z’}</p>
+<pre><code>- 相关公共方法: len、del、max、min(只会比较字典的key)；  
+- in、not in的使用(类似数据库…)；  
+- pass关键字的使用: 比如if … 下面没有写语句，python会提示报错，但是你可以写一个pass就不会报错了；也就是说如果在开发程序时，不希望立即编写分支内部的代码，可以使用pass作为一个占位符；可以保证程序代码结构正确；  
+- TODO关键字的使用，在编写程序框架的时候，可以用TODO标示某个地方还没有做某事；  
+- 迭代器的使用  </code></pre>
+<p>import sys  # 引入 sys 模块</p>
+<p>lst = [1, 2, 3, 4]<br>it = iter(lst)  # 创建迭代器对象</p>
+<h1 id="使用for-遍历迭代器"><a href="#使用for-遍历迭代器" class="headerlink" title="使用for 遍历迭代器"></a>使用for 遍历迭代器</h1><p>for x in it:<br>    print(x, end=” “)<br>print()</p>
+<p>it = iter(lst)  # 之前那个已经到了最后了，再次获取</p>
+<h1 id="使用next-while遍历"><a href="#使用next-while遍历" class="headerlink" title="使用next + while遍历"></a>使用next + while遍历</h1><p>while True:<br>    try:<br>        print(next(it), end=” “)<br>    except StopIteration:  # 防止无限循环<br>        sys.exit()  # 退出程序<br>print()</p>
+<pre><code>输出：  </code></pre>
+<p>1 2 3 4<br>1 2 3 4 </p>
+<pre><code>- 字符串中切片的使用: ①类似截取，但是可以指定步长；②python中支持倒序索引，最后一个是-1，倒数第二个是-2…；
+![](https://img-blog.csdnimg.cn/20181031112103587.png)</code></pre>
+<h1 id="切片的使用"><a href="#切片的使用" class="headerlink" title="切片的使用"></a>切片的使用</h1><p>num_str = “12345678”</p>
+<p>print(num_str[2:6])  # [2,5]<br>print(num_str[2:])  # 从2位置到结束<br>print(num_str[0:6])  # 输出[0,5]的<br>print(num_str[:6])  # 一开始到5的<br>print(num_str[:])  # 全部输出<br>print(num_str[::2])  # 指定步长  第三个参数指定步长<br>print(num_str[1::2])  # 从第一个开始　步长为2</p>
+<p>print(“*” * 20)<br>print(num_str[-1])  # 输出最后一个位置的<br>print(num_str[2:-1])  # 从第二个开始到倒数第二个</p>
+<p>print(“*” * 20)</p>
+<h1 id="一个面试题-逆序输出"><a href="#一个面试题-逆序输出" class="headerlink" title="一个面试题 逆序输出"></a>一个面试题 逆序输出</h1><p>print(num_str[-1::-1])  # 步长为-1代表向左切片，从最后一个开始切<br>print(num_str[::-1])</p>
+<pre><code>输出:</code></pre>
+<p>3456<br>345678<br>123456<br>123456<br>12345678<br>1357<br>2468</p>
+<hr>
+<p>8<br>34567</p>
+<hr>
+<p>87654321<br>87654321</p>
+<pre><code></code></pre>
 
             </div>
             <hr/>
@@ -522,7 +632,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://386720032.github.io/2020/092257779.html">http://386720032.github.io/2020/092257779.html</a>
+                    <a href="http://386720032.github.io/2020/092157779.html">http://386720032.github.io/2020/092157779.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -560,12 +670,28 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
-                                <a href="/tags/Ubuntu/">
-                                    <span class="chip bg-color">Ubuntu</span>
+                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">基础</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%88%97%E8%A1%A8/">
+                                    <span class="chip bg-color">列表</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%85%83%E7%BB%84/">
+                                    <span class="chip bg-color">元组</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AD%97%E5%85%B8/">
+                                    <span class="chip bg-color">字典</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                                    <span class="chip bg-color">字符串</span>
                                 </a>
                             
                         </div>
@@ -733,63 +859,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2020/092257779.html">
-                    <div class="card-image">
-                        
-                        <img src="https://topking66.gitee.io/medias/featureimages/9.jpg" class="responsive-img" alt="基于虚拟机 VMware 下的Ubuntn开机黑屏问题">
-                        
-                        <span class="card-title">基于虚拟机 VMware 下的Ubuntn开机黑屏问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/IT%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    IT技术
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/Ubuntu/">
-                        <span class="chip bg-color">Ubuntu</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2020/092110111.html">
                     <div class="card-image">
@@ -806,9 +878,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -834,6 +906,58 @@
                     
                     <a href="/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86/">
                         <span class="chip bg-color">小知识</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/081157779.html">
+                    <div class="card-image">
+                        
+                        <img src="http://pic.netbian.com/uploads/allimg/201008/221615-16021665751435.jpg" class="responsive-img" alt="排序算法之快速排序">
+                        
+                        <span class="card-title">排序算法之快速排序</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/IT%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    IT技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">排序</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>

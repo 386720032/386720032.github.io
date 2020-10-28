@@ -6,7 +6,7 @@
   <link href="http://386720032.github.io/atom.xml" rel="self"/>
   
   <link href="http://386720032.github.io/"/>
-  <updated>2020-10-20T07:29:35.785Z</updated>
+  <updated>2020-10-24T09:03:29.924Z</updated>
   <id>http://386720032.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://386720032.github.io/2020/092257779.html"/>
     <id>http://386720032.github.io/2020/092257779.html</id>
     <published>2020-09-22T06:42:45.000Z</published>
-    <updated>2020-10-20T07:29:35.785Z</updated>
+    <updated>2020-10-24T09:03:29.924Z</updated>
     
     
       
@@ -33,6 +33,8 @@
       
     
     
+    
+    <category term="IT技术" scheme="http://386720032.github.io/categories/IT%E6%8A%80%E6%9C%AF/"/>
     
     
     <category term="Linux" scheme="http://386720032.github.io/tags/Linux/"/>
@@ -46,7 +48,7 @@
     <link href="http://386720032.github.io/2020/092110111.html"/>
     <id>http://386720032.github.io/2020/092110111.html</id>
     <published>2020-09-21T03:12:45.000Z</published>
-    <updated>2020-10-20T05:51:57.028Z</updated>
+    <updated>2020-10-24T09:03:29.925Z</updated>
     
     
       
@@ -60,6 +62,8 @@
     
     
     
+    <category term="IT技术" scheme="http://386720032.github.io/categories/IT%E6%8A%80%E6%9C%AF/"/>
+    
     
     <category term="http" scheme="http://386720032.github.io/tags/http/"/>
     
@@ -71,10 +75,10 @@
   
   <entry>
     <title>Python基础知识(1)</title>
-    <link href="http://386720032.github.io/2020/081157779.html"/>
-    <id>http://386720032.github.io/2020/081157779.html</id>
-    <published>2020-08-11T03:22:15.000Z</published>
-    <updated>2020-10-24T08:52:13.787Z</updated>
+    <link href="http://386720032.github.io/2020/092157779.html"/>
+    <id>http://386720032.github.io/2020/092157779.html</id>
+    <published>2020-09-21T02:27:11.000Z</published>
+    <updated>2020-10-24T09:03:29.923Z</updated>
     
     
       
@@ -87,6 +91,8 @@
       
     
     
+    
+    <category term="IT技术" scheme="http://386720032.github.io/categories/IT%E6%8A%80%E6%9C%AF/"/>
     
     
     <category term="python" scheme="http://386720032.github.io/tags/python/"/>
@@ -108,7 +114,7 @@
     <link href="http://386720032.github.io/2020/081157779.html"/>
     <id>http://386720032.github.io/2020/081157779.html</id>
     <published>2020-08-11T03:22:15.000Z</published>
-    <updated>2020-10-20T10:26:06.991Z</updated>
+    <updated>2020-10-24T09:03:29.922Z</updated>
     
     
       
@@ -120,6 +126,8 @@
       
     
     
+    
+    <category term="IT技术" scheme="http://386720032.github.io/categories/IT%E6%8A%80%E6%9C%AF/"/>
     
     
     <category term="排序" scheme="http://386720032.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
@@ -133,7 +141,7 @@
     <link href="http://386720032.github.io/2020/062357779.html"/>
     <id>http://386720032.github.io/2020/062357779.html</id>
     <published>2020-06-23T09:02:17.000Z</published>
-    <updated>2020-10-20T11:15:46.379Z</updated>
+    <updated>2020-10-24T09:03:29.923Z</updated>
     
     
       
@@ -146,6 +154,8 @@
       
     
     
+    
+    <category term="IT技术" scheme="http://386720032.github.io/categories/IT%E6%8A%80%E6%9C%AF/"/>
     
     
     <category term="Linux" scheme="http://386720032.github.io/tags/Linux/"/>
@@ -163,7 +173,7 @@
     <link href="http://386720032.github.io/2018/081133149.html"/>
     <id>http://386720032.github.io/2018/081133149.html</id>
     <published>2018-08-11T03:22:15.000Z</published>
-    <updated>2020-10-21T06:16:53.592Z</updated>
+    <updated>2020-10-24T09:03:29.925Z</updated>
     
     
       
@@ -175,6 +185,8 @@
       
     
     
+    
+    <category term="魔术" scheme="http://386720032.github.io/categories/%E9%AD%94%E6%9C%AF/"/>
     
     
     <category term="魔术" scheme="http://386720032.github.io/tags/%E9%AD%94%E6%9C%AF/"/>

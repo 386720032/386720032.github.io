@@ -45,7 +45,7 @@
         align-items: center;
         background: #FFF;
         text-align: center;
-        /* loaderҳ����ʧ���ý����ķ�ʽ*/
+        /* loader页面消失采用渐隐的方式*/
         -webkit-transition: opacity 1s ease;
         -moz-transition: opacity 1s ease;
         -o-transition: opacity 1s ease;
@@ -143,7 +143,7 @@
         opacity: 0;
         filter: alpha(opacity=0);
     }
-    /* logo���ֶ��� */
+    /* logo出现动画 */
     @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
     @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
  </style>
@@ -152,12 +152,12 @@
     const loaded = function(){
        setTimeout(function(){
             const loader = document.getElementById("loading-container");
-            loader.className="fadeout" ;//ʹ�ý����ķ�������loading page
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
             // document.getElementById("body-wrap").style.display="flex";
             setTimeout(function(){
                 loader.style.display="none";
             },1000); 
-        },1000);//ǿ����ʾloading page 1s  
+        },1000);//强制显示loading page 1s  
     };
     loaded();
 })()
@@ -171,7 +171,7 @@
 
 
  <div id="loading-container">
-     <p class="loading-text">���������� . . . </p> 
+     <p class="loading-text">玩命加载中 . . . </p> 
      <div class="loading-image">
          <div></div>
          <div></div>
@@ -996,18 +996,6 @@
             
             
             
-            <a href="/tags/Linux/">
-                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Ubuntu/">
-                <span class="chip center-align waves-effect waves-light chip-default">Ubuntu</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E6%8E%92%E5%BA%8F/">
                 <span class="chip center-align waves-effect waves-light chip-default">排序</span>
             </a>
@@ -1016,6 +1004,18 @@
             
             <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                 <span class="chip center-align waves-effect waves-light chip-default">数据结构</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Linux/">
+                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Ubuntu/">
+                <span class="chip center-align waves-effect waves-light chip-default">Ubuntu</span>
             </a>
             
             

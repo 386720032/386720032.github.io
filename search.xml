@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Python基础知识(2)</title>
+      <link href="2020/092957779.html"/>
+      <url>2020/092957779.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="变量和引用"><a href="#变量和引用" class="headerlink" title="变量和引用"></a>变量和引用</h1><ul><li>变量和数据都是保存在内存中的；</li><li>在python中函数的参数传递以及返回值都是引用传递的；</li><li>变量和数据是分开存储的；</li><li>变量中记录数据的地址，就叫做引用；</li><li>使用id()函数可以查看变量中保存的数据所在的内存地址；</li><li>注意: 如果变量已经被定义，当给一个变量复制的时候，本质上是修改了数据的引用。① 变量不再对之前的数据引用；②变量改为对新复制的数据引用；</li><li>可变类型和不可变类型<br>不可变类型: 内存中的数据不允许修改:</li></ul><p><strong><em>① 数字类型: int、bool、 float、complex、long</em></strong><br><strong><em>② 字符串 :str</em></strong><br><strong><em>③ 元组 :tuple</em></strong></p><p><strong><em>可变类型: 内存中的数据可以被修改</em></strong></p><p><strong><em>① 列表 list</em></strong><br><strong><em>② 字典 dict</em></strong>  </p><ul><li>可变类型：变量赋值 a=5 后再赋值 a=10，这里实际是新生成一个 int 值对象 10，再让 a 指向它，而 5 被丢弃，不是改变a的值，相当于新生成了a；  </li><li>不可变类型: 变量赋值 la=[1,2,3,4] 后再赋值 la[2]=5 则是将 list la 的第三个元素值更改，本身la没有动，只是其内部的一部分值被修改了。  </li></ul><p><strong><em>函数参数传递时注意:</em></strong>  </p><ul><li>不可变类型：类似 c++ 的值传递，如 整数、字符串、元组。如fun（a），传递的只是a的值，没有影响a对象本身。比如在 fun（a）内部修改 a 的值，只是修改另一个复制的对象，不会影响 a 本身。  </li><li>可变类型：类似 c++ 的引用传递，如 列表，字典。如 fun（la），则是将 la 真正的传过去，修改后fun外部的la也会受影响；<h1 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h1>局部变量：函数内部定义的变量，只能在函数内部使用；<br>全局变量: 函数外部定义的变量，所有函数内部都可以使用这个变量；(不推荐使用)<br>注意: 在python中，不允许修改全局变量的值，如果修改，会在函数中定义一个局部变量；<pre><code>num = 10## python中，不允许修改全局变量#def method1():  num = 99  # 这里没有修改全局变量num，而是自己又定义了一个局部变量，执行完这个函数，局部变量就会回收  print(num)##def method2():  print(num)  # 虽然在method1中修改了 num 但是却不会修改##method1()method2()## 输出# 99# 10</code></pre></li><li>可以使用global关键字修改全局变量的值。  </li><li>全局变量的命名规则: 前面加上g_ 或者gl_；  <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1></li><li>函数如果返回的是一个元组就可以省略括号； </li><li>如果返回的是一个元组，可以使用多个变量直接接收函数的返回结果；(注意变量的个数和返回的元组的个数相同)<br>例如:<pre><code>def measure():  """测量湿度和温度"""  temp = 39  wetness = 50#  # 下面返回的是一个元组，为什么写成没有括号的样子，因为如果返回的是一个元组就可以省略括号  # return (temp, wetness)  return temp, wetness##res = measure()print(res)print(type(res))  # tuple### 很骚的，直接使用多个变量接收函数返回的元组gl_temp, gl_wetness = measure()print(gl_temp)print(gl_wetness)</code></pre></li><li>交换两个变量a、b的值的三种解法(第三种python专用)<pre><code>a = 6b = 100## 解法1c = aa = bb = cprint(a)print(b)## 解法2#a = a + bb = a - ba = a - bprint(a)print(b)## 解法3 python专用# a, b = (b, a)a, b = b, aprint(a)print(b)</code></pre></li><li>如果在函数中使用赋值语句，并不会影响调用函数时传递的实参变量；无论传递的参数可变还是不可变；    </li><li>只要针对参数使用赋值语句，会在函数内部修改局部变量的引用，不会影响到外部变量的引用；<br>测试:  <pre><code>def demo(num, num_list):  print("函数内部的代码")#  num = 100  num_list = [1, 2, 3]#  print(num)  print(num_list)  print("函数执行完成")##gl_num = 99gl_list = [4, 5, 6]demo(gl_num, gl_list)print(gl_num)  # 99print(gl_list)  # [4, 5, 6]</code></pre>输出：  <pre><code>函数内部的代码100[1, 2, 3]函数执行完成99[4, 5, 6]</code></pre>一张图解释:<br><img src="https://img-blog.csdnimg.cn/20181026201819891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=,size_27,color_FFFFFF,t_70"></li><li>如果传递的参数是可变类型，在函数内部，使用方法修改了数据的内容，同样会影响到外部的数据。<pre><code>def demo(num_list):  print("函数内部的代码")  num_list.append(666)  print(num_list)  print("函数代码执行结束")##gl_list = [1, 2, 3]demo(gl_list)print(gl_list)</code></pre>输出:<pre><code>函数内部的代码[1, 2, 3, 666]函数代码执行结束[1, 2, 3, 666]</code></pre>示意图:<br><img src="https://img-blog.csdnimg.cn/20181026203444819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=,size_27,color_FFFFFF,t_70"><br>上面写了，这里再重复一遍可变类型和不可变类型和参数传递的关系:  </li><li>不可变类型：类似 c++ 的值传递，如 整数、字符串、元组。如fun（a），传递的只是a的值，没有影响a对象本身。比如在 fun（a）内部修改 a 的值，只是修改另一个复制的对象，不会影响 a 本身。  </li><li>可变类型：类似 c++ 的引用传递，如 列表，字典。如 fun（la），则是将 la 真正的传过去，修改后fun外部的la也会受影响；  </li></ul><p><strong><em>列表变量调用 += 的时候相当于是调用extend，这个是一个特列；</em></strong></p><pre><code>def demo(num, num_list):    print("函数开始")#    # 赋值语句 不会改变外部    num += num#    # 但是列表是一个特例，+=列表相当于 extend 所以会改变外部    num_list += num_list    # num_list = num_list + num_list  # 这样就不会改变实参#    print(num)    print(num_list)#    print("函数结束")#gl_num = 9gl_list = [1, 2, 3]#demo(gl_num, gl_list)#print(gl_num)print(gl_list)</code></pre><p>输出：</p><pre class=" language-函数开始"><code class="language-函数开始">18[1, 2, 3, 1, 2, 3]函数结束9[1, 2, 3, 1, 2, 3]</code></pre><ul><li>缺省参数： ①定义函数时，可以给某个参数指定一个默认值，指定了默认值的参数叫做缺省参数；②一般使用最常见的值作为缺省参数；③缺省参数的定义位置：必须保证带有默认值的缺省参数定义在参数列表的末尾；  <pre><code>def print_info(name, gender=True):  gender_text = "男生"  if not gender:      gender_text = "女生"  print("%s 是 %s" % (name, gender_text))#print_info("小明")  # 缺省参数 使用最常见的值，作为缺省参数print_info("小美", False)</code></pre>还要注意，**<em>如果后面有多个参数，且只给具体的某一个指定默认值，就要具体的指定参数的名字:**</em><pre><code>def print_info(name, title="", gender=True):  gender_text = "男生"  if not gender:      gender_text = "女生"  print("%s 是 %s" % (name, gender_text))#print_info("小明") print_info("小美", False)  # 这个是错误的print_info("小美", gender=False)  # 这里必须指定为gender</code></pre>输出:<br><img src="https://img-blog.csdnimg.cn/20181026220216361.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=,size_27,color_FFFFFF,t_70"><br>这个原理类似降序排序:<pre class=" language-gl_list"><code class="language-gl_list">gl_list.sort(reverse=True)print(gl_list)</code></pre></li><li>多值参数<br><img src="https://img-blog.csdnimg.cn/20181026230411404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=,size_27,color_FFFFFF,t_70"><pre><code>def demo(num, *args, **kwargs):  # 多值参数 *接收元组 **接收字典  print(num)  print(args)  print(kwargs)##demo(1, 2, 3, 4, 5, name="小明", age=18)</code></pre>输出:<pre><code>1(2, 3, 4, 5){'name': '小明', 'age': 18}</code></pre>使用多值参数的好处，例如下面的例子计算求和，如果不使用* args 也就是不使用多值的元组的时候，我们传递参数的时候就需要传递一个元组，但是这样的话就直接传递一串数字就好了。<pre><code>def sum_number(*args):  res = 0  for n in args:      res += n  return res##print(sum_number(1, 2, 3, 4, 5))# print(sum_number((1, 2, 3, 4, 5)))  # 如果不加上*的话就要加上这个表示元组的括号</code></pre></li><li>多值参数元组和字典的拆包<br><img src="https://img-blog.csdnimg.cn/20181026233208529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=,size_27,color_FFFFFF,t_70"><br>首先看下面代码的输出，这个代码是出乎意料的:<pre><code>def demo(*args, **kwargs):  print(args)  print(kwargs)##gl_tuple = (1, 2, 3)gl_dict = {"name": "小明", "age": 18}#demo(gl_tuple, gl_dict)</code></pre>输出：<pre><code>((1, 2, 3), {'name': '小明', 'age': 18}){}</code></pre>加上拆包：<pre><code>def demo(*args, **kwargs):  print(args)  print(kwargs)##gl_tuple = (1, 2, 3)gl_dict = {"name": "小明", "age": 18}#demo(*gl_tuple, **gl_dict)  # 注意这里加上了拆包 类似与之前的传递参数</code></pre>输出:<pre><code>(1, 2, 3){'name': '小明', 'age': 18}</code></pre></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 基础 </tag>
+            
+            <tag> 变量 </tag>
+            
+            <tag> 函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于虚拟机 VMware 下的Ubuntn开机黑屏问题</title>
       <link href="2020/092257779.html"/>
       <url>2020/092257779.html</url>

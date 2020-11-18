@@ -678,75 +678,143 @@
 <li>方法和函数的异同: ①方法和函数类似，同样是封装了独立的功能；②方法需要通过对象来调用，表示针对这个对象要做的操作③函数需要记住，但是方法是对象的”函数”，方法不需要记住(IDE提示或者IPython中TAB补全)；</li>
 <li>变量赋值的几种特殊的方式:<pre><code>a = b = c = 1  # 三个都是1
 a, b, c = 1, 2, "hello"  # a = 1, b = 2, c = "hello"
-</code></pre>
+a, b = 0, 1
+a, b = b, a+b  # 右边表达式的执行顺序是从左往右的。
+"""
+上面的代码类似: 
+n = b
+m = a+b
+a = n
+b = m
+"""
+print(a)  # 1
+print(b)  # 1</code></pre>
 </li>
-</ul>
-<p>a, b = 0, 1<br>a, b = b, a+b  # 右边表达式的执行顺序是从左往右的。<br>“””<br>上面的代码类似:<br>n = b<br>m = a+b<br>a = n<br>b = m<br>“””<br>print(a)  # 1<br>print(b)  # 1</p>
-<pre><code>- 逻辑运算符:and、or、not，成员运算符in、not in，身份运算符is、is not；
-# 列表、元组(tuple)、字典、集合、字符串
-- 列表可以嵌套；
-- ```
-x = [['a', 'b', 'c'], [1, 2, 3]]
+<li>逻辑运算符:and、or、not，成员运算符in、not in，身份运算符is、is not；<h1 id="列表、元组-tuple-、字典、集合、字符串"><a href="#列表、元组-tuple-、字典、集合、字符串" class="headerlink" title="列表、元组(tuple)、字典、集合、字符串"></a>列表、元组(tuple)、字典、集合、字符串</h1></li>
+<li>列表可以嵌套；<pre><code>x = [['a', 'b', 'c'], [1, 2, 3]]
 print(x[0])  # ['a', 'b', 'c']
 print(x[0][1])  # 'b'</code></pre>
-<ul>
+</li>
 <li>元组不同于列表的是: 元组不能修改，用()表示；(不能增删改)  </li>
 <li>元组一般保存不同类型的数据；  </li>
 <li><strong>注意: 只有一个元素的元组: single_tuple = (5,) ，也就是说元组中只包含一个元素时，需要在元素后面添加逗号；不能这样写   single_tuple = (5)，这样是一个整形的变量；另外，创建元组也可以不加上括号；</strong><pre><code>tup = "a", "b", "c", "d"
 print(tup)
 print(type(tup))
-</code></pre>
+'''------------------------ '''
+tup2 = ("a",)  # 一个元素的元组 (后面必须加上一个括号)
+print(tup2)
+print(type(tup2))</code></pre>
+输出:  <pre><code>('a', 'b', 'c', 'd')
+&lt;class 'tuple'&gt;
+('a',)
+&lt;class 'tuple'&gt;</code></pre>
+</li>
+<li>元组的用途: ① 作为函数的参数和返回值；②格式化字符串(格式字符串本身就是一个元组)；(3)让列表不可以被修改，保护数据安全；</li>
+<li>格式化字符串和元组的关系，看下面的三个print输出是一样的:  <pre><code># 元组和格式化字符串的关系
+info_tuple = ("小明", 21, 1.85)
+print("%s 年龄是 %d 身高是 %.2f" % ("小明", 21, 1.85))
+print("%s 年龄是 %d 身高是 %.2f" % info_tuple)
+'''---------------------'''
+info_str = "%s 年龄是 %d 身高是 %.2f" % info_tuple
+print(info_str)</code></pre>
+</li>
+<li>元组和列表可以相互转换 : ①使用list(元组)将元组转换成列表；②使用tuple将列表转换成元组；  </li>
+<li>字典: ① 键必须是唯一的 ②值可以取任意类型，但是键只能使用字符串、数字或者元组(键只能是不可变类型)。  </li>
+<li>**遍历字典的时候for k in dict 中的k是键，而不是值。（普通的for），不过也可以通过items()方法遍历键值对: **  <pre><code>dict_student = {'name': 'xiaoming', 'age': '18', 'qq': "1234"}
+#
+# 遍历方式一
+for k in dict_student:  # k 是key
+  print(k, end=" ")
+  print(dict_student[k])
+#
+print("*" * 20)
+# 遍历方式二
+for k, v in dict_student.items():
+  print(k, v)</code></pre>
+</li>
+<li>字符串中的转义字符：\n表示换行，而\r表示回车，字符串中的函数- - isspace()判断的时候\t\n\r都是表示的空白字符；<br>isdecimla()、isdigit()、isnumeric()都不能判断字符串中的小数，(可以判断字符串中的整数)；  </li>
+<li>集合set的使用: 可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。 集合还有一些方法add()、update()、pop()等；<pre><code>student = {'Tom', 'Jim', 'Mary', 'Tom', 'Jack', 'Rose'}
+print(student)  # 输出集合，重复的元素被自动去掉
+#
+if 'Rose' in student:
+  print('Rose 在集合中')
+else:
+  print('Rose 不在集合中')
+#
+# set可以进行集合运算
+a = set('abracadabra')
+b = set('alacazam')
+#
+print(a - b)  # a和b的差集
+print(a | b)  # a和b的并集
+print(a &amp; b)  # a和b的交集
+print(a ^ b)  # a和b中不同时存在的元素</code></pre>
+输出：  <pre><code>{'Jim', 'Mary', 'Jack', 'Rose', 'Tom'}
+Rose 在集合中
+{'b', 'd', 'r'}
+{'b', 'l', 'c', 'd', 'z', 'm', 'a', 'r'}
+{'c', 'a'}
+{'b', 'm', 'l', 'r', 'd', 'z'}</code></pre>
+</li>
+<li>相关公共方法: len、del、max、min(只会比较字典的key)；  </li>
+<li>in、not in的使用(类似数据库…)；  </li>
+<li>pass关键字的使用: 比如if … 下面没有写语句，python会提示报错，但是你可以写一个pass就不会报错了；也就是说如果在开发程序时，不希望立即编写分支内部的代码，可以使用pass作为一个占位符；可以保证程序代码结构正确；  </li>
+<li>TODO关键字的使用，在编写程序框架的时候，可以用TODO标示某个地方还没有做某事；  </li>
+<li>迭代器的使用  <pre><code>import sys  # 引入 sys 模块
+#
+lst = [1, 2, 3, 4]
+it = iter(lst)  # 创建迭代器对象
+#
+# 使用for 遍历迭代器
+for x in it:
+  print(x, end=" ")
+print()
+#
+it = iter(lst)  # 之前那个已经到了最后了，再次获取
+# 使用next + while遍历
+while True:
+  try:
+      print(next(it), end=" ")
+  except StopIteration:  # 防止无限循环
+      sys.exit()  # 退出程序
+print()</code></pre>
+输出：  <pre><code>1 2 3 4 
+1 2 3 4 </code></pre>
+</li>
+<li>字符串中切片的使用: ①类似截取，但是可以指定步长；②python中支持倒序索引，最后一个是-1，倒数第二个是-2…；<br><img src="https://img-blog.csdnimg.cn/20181031112103587.png"><pre><code># 切片的使用
+num_str = "12345678"
+#
+print(num_str[2:6])  # [2,5]
+print(num_str[2:])  # 从2位置到结束
+print(num_str[0:6])  # 输出[0,5]的
+print(num_str[:6])  # 一开始到5的
+print(num_str[:])  # 全部输出
+print(num_str[::2])  # 指定步长  第三个参数指定步长
+print(num_str[1::2])  # 从第一个开始　步长为2
+#
+print("*" * 20)
+print(num_str[-1])  # 输出最后一个位置的
+print(num_str[2:-1])  # 从第二个开始到倒数第二个
+#
+print("*" * 20)
+# 一个面试题 逆序输出
+print(num_str[-1::-1])  # 步长为-1代表向左切片，从最后一个开始切
+print(num_str[::-1])</code></pre>
+输出:<pre><code>3456
+345678
+123456
+123456
+12345678
+1357
+2468
+# ********************
+8
+34567
+# ********************
+87654321
+87654321</code></pre>
 </li>
 </ul>
-<p>tup2 = (“a”,)  # 一个元素的元组 (后面必须加上一个括号)<br>print(tup2)<br>print(type(tup2))</p>
-<pre><code>输出:  </code></pre>
-<p>(‘a’, ‘b’, ‘c’, ‘d’)<br>&lt;class ‘tuple’&gt;<br>(‘a’,)<br>&lt;class ‘tuple’&gt;</p>
-<pre><code>- 元组的用途: ① 作为函数的参数和返回值；②格式化字符串(格式字符串本身就是一个元组)；(3)让列表不可以被修改，保护数据安全；
-- 格式化字符串和元组的关系，看下面的三个print输出是一样的:  </code></pre>
-<h1 id="元组和格式化字符串的关系"><a href="#元组和格式化字符串的关系" class="headerlink" title="元组和格式化字符串的关系"></a>元组和格式化字符串的关系</h1><p>info_tuple = (“小明”, 21, 1.85)<br>print(“%s 年龄是 %d 身高是 %.2f” % (“小明”, 21, 1.85))<br>print(“%s 年龄是 %d 身高是 %.2f” % info_tuple)</p>
-<p>info_str = “%s 年龄是 %d 身高是 %.2f” % info_tuple<br>print(info_str)</p>
-<pre><code>- 元组和列表可以相互转换 : ①使用list(元组)将元组转换成列表；②使用tuple将列表转换成元组；  
-- 字典: ① 键必须是唯一的 ②值可以取任意类型，但是键只能使用字符串、数字或者元组(键只能是不可变类型)。  
-- **遍历字典的时候for k in dict 中的k是键，而不是值。（普通的for），不过也可以通过items()方法遍历键值对: **  </code></pre>
-<p>dict_student = {‘name’: ‘xiaoming’, ‘age’: ‘18’, ‘qq’: “1234”}</p>
-<h1 id="遍历方式一"><a href="#遍历方式一" class="headerlink" title="遍历方式一"></a>遍历方式一</h1><p>for k in dict_student:  # k 是key<br>    print(k, end=” “)<br>    print(dict_student[k])</p>
-<p>print(“*” * 20)</p>
-<h1 id="遍历方式二"><a href="#遍历方式二" class="headerlink" title="遍历方式二"></a>遍历方式二</h1><p>for k, v in dict_student.items():<br>    print(k, v)</p>
-<pre><code>- 字符串中的转义字符：\n表示换行，而\r表示回车，字符串中的函数- - isspace()判断的时候\t\n\r都是表示的空白字符；    
-isdecimla()、isdigit()、isnumeric()都不能判断字符串中的小数，(可以判断字符串中的整数)；  
-- 集合set的使用: 可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。 集合还有一些方法add()、update()、pop()等；</code></pre>
-<p>student = {‘Tom’, ‘Jim’, ‘Mary’, ‘Tom’, ‘Jack’, ‘Rose’}<br>print(student)  # 输出集合，重复的元素被自动去掉</p>
-<p>if ‘Rose’ in student:<br>    print(‘Rose 在集合中’)<br>else:<br>    print(‘Rose 不在集合中’)</p>
-<h1 id="set可以进行集合运算"><a href="#set可以进行集合运算" class="headerlink" title="set可以进行集合运算"></a>set可以进行集合运算</h1><p>a = set(‘abracadabra’)<br>b = set(‘alacazam’)</p>
-<p>print(a - b)  # a和b的差集<br>print(a | b)  # a和b的并集<br>print(a &amp; b)  # a和b的交集<br>print(a ^ b)  # a和b中不同时存在的元素</p>
-<pre><code>输出：  </code></pre>
-<p>{‘Jim’, ‘Mary’, ‘Jack’, ‘Rose’, ‘Tom’}<br>Rose 在集合中<br>{‘b’, ‘d’, ‘r’}<br>{‘b’, ‘l’, ‘c’, ‘d’, ‘z’, ‘m’, ‘a’, ‘r’}<br>{‘c’, ‘a’}<br>{‘b’, ‘m’, ‘l’, ‘r’, ‘d’, ‘z’}</p>
-<pre><code>- 相关公共方法: len、del、max、min(只会比较字典的key)；  
-- in、not in的使用(类似数据库…)；  
-- pass关键字的使用: 比如if … 下面没有写语句，python会提示报错，但是你可以写一个pass就不会报错了；也就是说如果在开发程序时，不希望立即编写分支内部的代码，可以使用pass作为一个占位符；可以保证程序代码结构正确；  
-- TODO关键字的使用，在编写程序框架的时候，可以用TODO标示某个地方还没有做某事；  
-- 迭代器的使用  </code></pre>
-<p>import sys  # 引入 sys 模块</p>
-<p>lst = [1, 2, 3, 4]<br>it = iter(lst)  # 创建迭代器对象</p>
-<h1 id="使用for-遍历迭代器"><a href="#使用for-遍历迭代器" class="headerlink" title="使用for 遍历迭代器"></a>使用for 遍历迭代器</h1><p>for x in it:<br>    print(x, end=” “)<br>print()</p>
-<p>it = iter(lst)  # 之前那个已经到了最后了，再次获取</p>
-<h1 id="使用next-while遍历"><a href="#使用next-while遍历" class="headerlink" title="使用next + while遍历"></a>使用next + while遍历</h1><p>while True:<br>    try:<br>        print(next(it), end=” “)<br>    except StopIteration:  # 防止无限循环<br>        sys.exit()  # 退出程序<br>print()</p>
-<pre><code>输出：  </code></pre>
-<p>1 2 3 4<br>1 2 3 4 </p>
-<pre><code>- 字符串中切片的使用: ①类似截取，但是可以指定步长；②python中支持倒序索引，最后一个是-1，倒数第二个是-2…；
-![](https://img-blog.csdnimg.cn/20181031112103587.png)</code></pre>
-<h1 id="切片的使用"><a href="#切片的使用" class="headerlink" title="切片的使用"></a>切片的使用</h1><p>num_str = “12345678”</p>
-<p>print(num_str[2:6])  # [2,5]<br>print(num_str[2:])  # 从2位置到结束<br>print(num_str[0:6])  # 输出[0,5]的<br>print(num_str[:6])  # 一开始到5的<br>print(num_str[:])  # 全部输出<br>print(num_str[::2])  # 指定步长  第三个参数指定步长<br>print(num_str[1::2])  # 从第一个开始　步长为2</p>
-<p>print(“*” * 20)<br>print(num_str[-1])  # 输出最后一个位置的<br>print(num_str[2:-1])  # 从第二个开始到倒数第二个</p>
-<p>print(“*” * 20)</p>
-<h1 id="一个面试题-逆序输出"><a href="#一个面试题-逆序输出" class="headerlink" title="一个面试题 逆序输出"></a>一个面试题 逆序输出</h1><p>print(num_str[-1::-1])  # 步长为-1代表向左切片，从最后一个开始切<br>print(num_str[::-1])</p>
-<pre><code>输出:</code></pre>
-<p>3456<br>345678<br>123456<br>123456<br>12345678<br>1357<br>2468</p>
-<hr>
-<p>8<br>34567</p>
-<hr>
-<p>87654321<br>87654321</p>
-<pre><code></code></pre>
 
             </div>
             <hr/>

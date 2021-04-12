@@ -126,33 +126,6 @@
     
     
     <entry>
-      <title>测试</title>
-      <link href="2020/091157717.html"/>
-      <url>2020/091157717.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h1><p>通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序<br>1.任取一个元素 (如第一个) 为中心  </p><p>2.所有比它小的元素一律前放，比它大的元素一律后放，形成左右两个子表</p><p>3.对各子表重新选择中心元素并依此规则调整，直到每个子表的元素只剩一个</p><h1 id="划分过程中的实例："><a href="#划分过程中的实例：" class="headerlink" title="划分过程中的实例："></a>划分过程中的实例：</h1><p><img src="https://img-blog.csdnimg.cn/20200501001301270.png"><br><strong>算法分析</strong>：</p><p><strong>平均计算时间是O(nlog2n),就平均计算时间而言，快速排序是我们所讨论的所有内排序方法中最好的一个</strong></p><p><strong>时间效率</strong>: O(nlog2n) ,每趟确定的元素呈指数增加</p><p><strong>空间效率</strong>: O(log2n),递归要用到栈空间</p><p><strong>稳 定 性</strong>: 不稳定 ,可选任一元素为支点</p><p><strong>代码实现</strong>：  </p><pre><code>import java.util.Random;public class Quicksort {    public static void main(String[] args) {    int a[]=new int[10];     //声明创建长度为10的一维数组    Random ran=new Random();    int i;    //生成随机数组并输出    for(i=0;i&lt;a.length;i++)    {        a[i]=ran.nextInt(1000)+1;       // 把范围为1-1000的随机整数复制给a[i]        System.out.print(a[i]+" ");     // 输出a[i]    }     System.out.println();    quickSort(a,0,a.length-1);    System.out.println("快速排序后：");    for(int j:a)   //遍历排序后的数组                {        System.out.print(j+" ");    }  }    public static void quickSort(int a[],int l,int r)    {        int i,j,temp;        if(l&gt;=r) return ;  //只有一个记录或者无记录，则无需排序        i=l;        j=r;        temp=a[i];   //取a[i]为基准数             while(i!=j)        {            while(i&lt;j&amp;&amp;a[j]&gt;=temp) //找比基准数temp小的数            {                j--;            }            if(i&lt;j)                     a[i++]=a[j];                    while(i&lt;j&amp;&amp;a[i]&lt;=temp)  //找比基准数temp大的数            {                 i++;            }            if(i&lt;j)            a[j--]=a[i];        }        a[i]=temp;              //i为基准数temp放入的位置    quickSort(a,l,i-1);       //递归调用    quickSort(a,i+1,r);    }}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> IT技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 排序 </tag>
-            
-            <tag> 数据结构 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>排序算法之快速排序</title>
       <link href="2020/081157779.html"/>
       <url>2020/081157779.html</url>

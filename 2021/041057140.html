@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="排序算法之快速排序, 欢迎来到钟健桦的个人博客">
+    <meta name="keywords" content="魔术师守则—萨斯顿三原则, 欢迎来到钟健桦的个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>排序算法之快速排序 | 欢迎来到钟健桦的个人博客</title>
+    <title>魔术师守则—萨斯顿三原则 | 欢迎来到钟健桦的个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -468,12 +468,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/posts_img/26.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/posts_img/28.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">排序算法之快速排序</h1>
+                    <h1 class="description center-align post-title">魔术师守则—萨斯顿三原则</h1>
                 </div>
             </div>
         </div>
@@ -590,12 +590,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                <span class="chip bg-color">排序</span>
+                            <a href="/tags/%E9%AD%94%E6%9C%AF/">
+                                <span class="chip bg-color">魔术</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                                <span class="chip bg-color">数据结构</span>
+                            <a href="/tags/%E5%8E%9F%E5%88%99/">
+                                <span class="chip bg-color">原则</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%99%E5%AD%A6/">
+                                <span class="chip bg-color">教学</span>
                             </a>
                         
                     </div>
@@ -606,8 +610,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/IT%E6%8A%80%E6%9C%AF/" class="post-category">
-                                IT技术
+                            <a href="/categories/%E9%AD%94%E6%9C%AF/" class="post-category">
+                                魔术
                             </a>
                         
                     </div>
@@ -619,7 +623,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-11
+                    2021-04-10
                 </div>
                 
 
@@ -635,72 +639,18 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h1><p>通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序<br>1.任取一个元素 (如第一个) 为中心  </p>
-<p>2.所有比它小的元素一律前放，比它大的元素一律后放，形成左右两个子表</p>
-<p>3.对各子表重新选择中心元素并依此规则调整，直到每个子表的元素只剩一个</p>
-<h1 id="划分过程中的实例："><a href="#划分过程中的实例：" class="headerlink" title="划分过程中的实例："></a>划分过程中的实例：</h1><p><img src="https://img-blog.csdnimg.cn/20200501001301270.png"><br><strong>算法分析</strong>：</p>
-<p><strong>平均计算时间是O(nlog2n),就平均计算时间而言，快速排序是我们所讨论的所有内排序方法中最好的一个</strong></p>
-<p><strong>时间效率</strong>: O(nlog2n) ,每趟确定的元素呈指数增加</p>
-<p><strong>空间效率</strong>: O(log2n),递归要用到栈空间</p>
-<p><strong>稳 定 性</strong>: 不稳定 ,可选任一元素为支点</p>
-<p><strong>代码实现</strong>：  </p>
-<pre><code>import java.util.Random;
-
-public class Quicksort {
-    public static void main(String[] args) {
-    int a[]=new int[10];     //声明创建长度为10的一维数组
-    Random ran=new Random();
-    int i;
-
-    //生成随机数组并输出
-    for(i=0;i&lt;a.length;i++)
-    {
-        a[i]=ran.nextInt(1000)+1;       // 把范围为1-1000的随机整数复制给a[i]
-        System.out.print(a[i]+" ");     // 输出a[i]
-    } 
-    System.out.println();
-
-    quickSort(a,0,a.length-1);
-    System.out.println("快速排序后：");
-
-    for(int j:a)   //遍历排序后的数组            
-    {
-        System.out.print(j+" ");
-    }
-
-  }
-
-    public static void quickSort(int a[],int l,int r)
-    {
-        int i,j,temp;
-        if(l&gt;=r) return ;  //只有一个记录或者无记录，则无需排序
-        i=l;
-        j=r;
-        temp=a[i];   //取a[i]为基准数     
-        while(i!=j)
-        {
-            while(i&lt;j&amp;&amp;a[j]&gt;=temp) //找比基准数temp小的数
-            {
-
-                j--;
-            }
-
-            if(i&lt;j)         
-            a[i++]=a[j];        
-            while(i&lt;j&amp;&amp;a[i]&lt;=temp)  //找比基准数temp大的数
-            {
-                 i++;
-
-            }
-            if(i&lt;j)
-            a[j--]=a[i];
-        }
-        a[i]=temp;              //i为基准数temp放入的位置
-    quickSort(a,l,i-1);       //递归调用
-    quickSort(a,i+1,r);
-
-    }
-}</code></pre>
+                <p><img src="/posts_img/28.jpg"></p>
+<h1 id="萨斯顿三大原则："><a href="#萨斯顿三大原则：" class="headerlink" title="萨斯顿三大原则："></a>萨斯顿三大原则：</h1><p>1.绝对不向观众透漏魔术的秘密。</p>
+<p>2.表演前，绝对不向观众说明接下来所要表演的内容。 </p>
+<p>3.决不在同时同地、同观众的情况下表演相同的魔术第二次。<br><img src="/posts_img/29.jpg"></p>
+<h1 id="魔术师戒条"><a href="#魔术师戒条" class="headerlink" title="魔术师戒条:"></a>魔术师戒条:</h1><p>(一)要尊重同道.  </p>
+<p>(二)要认真练习.  </p>
+<p>(三)未练习熟练前不作表演.  </p>
+<p>(四)不无代价教授魔术. </p>
+<p>(五)不公开魔术的秘密.  </p>
+<p>(六)不在表演前说出魔术效果.  </p>
+<p>(七)不在同一观众前表演同一套魔术.  </p>
+<p>(八)要以正途发展魔术 </p>
 
             </div>
             <hr/>
@@ -726,7 +676,7 @@ public class Quicksort {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://386720032.github.io/2020/081157779.html">http://386720032.github.io/2020/081157779.html</a>
+                    <a href="http://386720032.github.io/2021/041057140.html">http://386720032.github.io/2021/041057140.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -764,12 +714,16 @@ public class Quicksort {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                    <span class="chip bg-color">排序</span>
+                                <a href="/tags/%E9%AD%94%E6%9C%AF/">
+                                    <span class="chip bg-color">魔术</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                                    <span class="chip bg-color">数据结构</span>
+                                <a href="/tags/%E5%8E%9F%E5%88%99/">
+                                    <span class="chip bg-color">原则</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%99%E5%AD%A6/">
+                                    <span class="chip bg-color">教学</span>
                                 </a>
                             
                         </div>
@@ -1250,12 +1204,12 @@ public class Quicksort {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/092157779.html">
+                <a href="/2021/042257780.html">
                     <div class="card-image">
                         
-                        <img src="/posts_img/5.jpg" class="responsive-img" alt="Python基础知识(1)">
+                        <img src="/posts_img/24.jpg" class="responsive-img" alt="基于Linux用C语言实现TCP半双工通信和UDP半双工通信">
                         
-                        <span class="card-title">Python基础知识(1)</span>
+                        <span class="card-title">基于Linux用C语言实现TCP半双工通信和UDP半双工通信</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1266,8 +1220,64 @@ public class Quicksort {
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/IT%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    IT技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%8A%E5%8F%8C%E5%B7%A5%E9%80%9A%E4%BF%A1/">
+                        <span class="chip bg-color">半双工通信</span>
+                    </a>
+                    
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/092957779.html">
+                    <div class="card-image">
+                        
+                        <img src="/posts_img/8.jpg" class="responsive-img" alt="Python基础知识(2)">
+                        
+                        <span class="card-title">Python基础知识(2)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1291,72 +1301,12 @@ public class Quicksort {
                         <span class="chip bg-color">基础</span>
                     </a>
                     
-                    <a href="/tags/%E5%88%97%E8%A1%A8/">
-                        <span class="chip bg-color">列表</span>
+                    <a href="/tags/%E5%8F%98%E9%87%8F/">
+                        <span class="chip bg-color">变量</span>
                     </a>
                     
-                    <a href="/tags/%E5%85%83%E7%BB%84/">
-                        <span class="chip bg-color">元组</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AD%97%E5%85%B8/">
-                        <span class="chip bg-color">字典</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2018/081133149.html">
-                    <div class="card-image">
-                        
-                        <img src="/posts_img/27.jpg" class="responsive-img" alt="2018年的一天，我做了个梦">
-                        
-                        <span class="card-title">2018年的一天，我做了个梦</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-08-11
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%AD%94%E6%9C%AF/" class="post-category">
-                                    魔术
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%AD%94%E6%9C%AF/">
-                        <span class="chip bg-color">魔术</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%A2%84%E8%A8%80/">
-                        <span class="chip bg-color">预言</span>
+                    <a href="/tags/%E5%87%BD%E6%95%B0/">
+                        <span class="chip bg-color">函数</span>
                     </a>
                     
                 </div>
